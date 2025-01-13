@@ -5,9 +5,6 @@ export default function Home() {
   return (
   <>
     <main className="wrapper">
-      <p>Test</p>
-      
-      <Button variant="secondary">test</Button>
       <ProjectCards/>
     </main>
   </>
