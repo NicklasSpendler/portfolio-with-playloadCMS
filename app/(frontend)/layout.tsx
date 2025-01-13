@@ -34,9 +34,9 @@ export default function RootLayout({
   return (
     <html lang="en">
     
-        <body
-            className={`${geistSans.variable} ${geistMono.variable} antialiased dark`}>
-        
+        <body className={`${geistSans.variable} ${geistMono.variable} antialiased dark`}>
+            
+            <h1 className="text-4xl text-center">Work in progress!</h1>
             <HeaderComponent header={header}/>
             
             {children}
