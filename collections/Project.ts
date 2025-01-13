@@ -1,4 +1,6 @@
 import {CollectionConfig} from "payload";
+import {Projectcards} from "@/blocks/projectcards/config";
+import {RichText} from "@/blocks/richText/config";
 
 export const Project: CollectionConfig = {
     slug: 'project',
@@ -17,6 +19,15 @@ export const Project: CollectionConfig = {
             label: 'Short Description',
             type: 'textarea',
             required: true,
+        },
+        {
+            name: 'layout',
+            label: 'Layout',
+            type: 'blocks',
+            blocks: [
+                Projectcards,
+                RichText,
+            ]
         },
         {
             name: 'relatedskills',

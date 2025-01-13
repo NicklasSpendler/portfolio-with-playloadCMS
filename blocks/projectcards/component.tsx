@@ -1,7 +1,7 @@
 import React from 'react';
 import Projectcard from "@/components/ui/projectcard";
 
-function ProjectCards(props) {
+function ProjectCards() {
     return (
         <div className="grid grid-cols-4 gap-4 py-4">
             <Projectcard/>

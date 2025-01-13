@@ -1,13 +1,11 @@
 "use client"
 import React, {useEffect} from 'react';
 import './style.css'
-import config from '@payload-config'
-import {getPayload} from "payload";
 import Link from "next/link";
 
 
 
-function HeaderComponent(props) {
+function HeaderComponent(props: any) {
     useEffect(() =>{
         init();
     });
@@ -63,46 +61,26 @@ function HeaderComponent(props) {
     
     return (
         <header className="mb-5">
-            <nav className="flex justify-end">
-                <ul ref={MenuListRef} className="nav flex gap-5">
-                {
-                props.header.nav.map((item, index: number) => {
-                        return(
-                            <li key={index}>
-                                <Link href={`/${item.link}`} onMouseOver={(e) => MoveLineTo(e.target as HTMLElement)}
-                                   onMouseOut={() => MoveLineTo(selectedElem.current as HTMLElement)}
-                                   onClick={handleOnClick}>
-                                    {item.label}
-                                </Link>
-                            </li>
-                        )
-                        })
-                }
-                    
-                {/*                    <li>
-                        <a onMouseOver={(e) => MoveLineTo(e.target as HTMLElement)}
-                           onMouseOut={() => MoveLineTo(selectedElem.current as HTMLElement)}
-                           onClick={handleOnClick}>
-                            Home
-                        </a>
-                    </li>
-                    <li>
-                        <a onMouseOver={(e) => MoveLineTo(e.target as HTMLElement)}
-                           onMouseOut={() => MoveLineTo(selectedElem.current as HTMLElement)}
-                           onClick={handleOnClick}>
-                            About
-                        </a>
-                    </li>
-                    <li>
-                        <a onMouseOver={(e) => MoveLineTo(e.target as HTMLElement)}
-                           onMouseOut={() => MoveLineTo(selectedElem.current as HTMLElement)}
-                           onClick={handleOnClick}>
-                            Contact
-                        </a>
-                    </li>*/}
-                </ul>
-            </nav>
-            <div ref={AnimatedLineRef} className="animated_line"></div>
+            <div className="wrapper">
+                <nav className="flex justify-end">
+                    <ul ref={MenuListRef} className="nav flex gap-5">
+                    {
+                    props.header.nav.map((item: any, index: number) => {
+                            return(
+                                <li key={index}>
+                                    <Link href={item.link} onMouseOver={(e) => MoveLineTo(e.target as HTMLElement)}
+                                       onMouseOut={() => MoveLineTo(selectedElem.current as HTMLElement)}
+                                       onClick={handleOnClick}>
+                                            {item.label}
+                                    </Link>
+                                </li>
+                            )
+                            })
+                    }
+                    </ul>
+                </nav>
+                <div ref={AnimatedLineRef} className="animated_line"></div>
+            </div>
 
         </header>
     );
