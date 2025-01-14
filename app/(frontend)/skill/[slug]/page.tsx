@@ -36,7 +36,7 @@ const queryDataBySlug = cache(async ({ slug }: { slug: string }) => {
     return {skillData, projectsData}
 })
 
-async function Page({params} : {params: {slug: string}}) {
+async function Page({params} : any) {
     const {slug} = await params
     const data = await queryDataBySlug({
         slug,
