@@ -109,6 +109,7 @@ export interface Project {
   id: number;
   projectname: string;
   shortdescription: string;
+  github?: string | null;
   layout?:
     | (
         | {
@@ -259,6 +260,7 @@ export interface MediaSelect<T extends boolean = true> {
 export interface ProjectSelect<T extends boolean = true> {
   projectname?: T;
   shortdescription?: T;
+  github?: T;
   layout?:
     | T
     | {

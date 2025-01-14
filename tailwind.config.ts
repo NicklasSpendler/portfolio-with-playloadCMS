@@ -7,7 +7,7 @@ export default {
     "./globals/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}", 
 	"./components/**/*.{ts,tsx}",
-		"./blocks/**/*.{js,ts,jsx,tsx}",
+	"./blocks/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
   	extend: {
@@ -56,7 +56,10 @@ export default {
   				'3': 'hsl(var(--chart-3))',
   				'4': 'hsl(var(--chart-4))',
   				'5': 'hsl(var(--chart-5))'
-  			}
+  			},
+			'neonpink': {
+				  DEFAULT: '#fa198b'
+			}
   		},
 		gridTemplateRows: {
 			  'cardLayout': 'repeat(3, auto auto min-content)'

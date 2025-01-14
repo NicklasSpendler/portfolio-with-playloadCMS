@@ -21,6 +21,11 @@ export const Project: CollectionConfig = {
             required: true,
         },
         {
+            name: 'github',
+            label: 'github',
+            type: 'text',
+        },
+        {
             name: 'layout',
             label: 'Layout',
             type: 'blocks',
