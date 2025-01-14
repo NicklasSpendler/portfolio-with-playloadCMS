@@ -5,8 +5,6 @@ import Skilltag from "@/components/ui/skilltag";
 import Link from "next/link";
 import {Project} from "@/payload-types";
 
-
-//`grid grid-rows-cardLayout leading-4 overflow-hidden hover:scale-110 transition duration-500 transform`
 function Projectcard({data}: {data: Project}) {
     return (
         <>

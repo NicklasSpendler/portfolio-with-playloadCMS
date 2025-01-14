@@ -1,4 +1,3 @@
-import {Button} from "@/components/ui/button";
 import ProjectCards from "@/blocks/projectcards/component";
 
 export default function Home() {
