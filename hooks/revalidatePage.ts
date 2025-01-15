@@ -9,6 +9,6 @@ export const revalidatePage: CollectionAfterChangeHook = ({
                                                                 req: { payload, context },
                                                             }) =>
 {
-    revalidatePath('/skill')
+    revalidatePath('/')
     return doc
 }
