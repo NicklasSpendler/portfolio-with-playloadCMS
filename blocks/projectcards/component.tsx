@@ -3,13 +3,14 @@ import Projectcard from "@/components/ui/projectcard";
 import {getPayload} from "payload";
 import config from '@payload-config'
 
-const payload = await getPayload({config})
 
-const projects = await payload.find({
-    collection:'project',
-})
 
-function ProjectCards() {
+async function ProjectCards() {
+    const payload = await getPayload({config})
+
+    const projects = await payload.find({
+        collection:'project',
+    })
     return (
         <div className="grid grid-cols-4 gap-4 py-4">
             {
