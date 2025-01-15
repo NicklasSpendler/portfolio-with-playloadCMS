@@ -4,13 +4,15 @@ import {getPayload} from "payload";
 import config from '@payload-config'
 import {Skill} from "@/payload-types";
 
-const payload = await getPayload({config});
 
-const skills = await payload.find({
-    collection: 'skill',
-})
-export const revalidate = 600
-function Page() {
+
+async function Page() {
+
+    const payload = await getPayload({config});
+
+    const skills = await payload.find({
+        collection: 'skill',
+    })
     const data: Skill[] =  skills.docs;
 
     return (
