@@ -1,4 +1,5 @@
-import {CollectionConfig} from "payload";
+import {CollectionAfterChangeHook, CollectionConfig} from "payload";
+import {revalidatePage} from "@/hooks/revalidatePage";
 
 export const Skill: CollectionConfig = {
     slug: 'skill',
@@ -18,5 +19,8 @@ export const Skill: CollectionConfig = {
             type: 'textarea',
             required: false,
         }
-    ]
+    ],
+    hooks: {
+        afterChange: [revalidatePage]
+    }
 }
