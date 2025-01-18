@@ -1,6 +1,5 @@
 import {CollectionAfterChangeHook} from "payload";
-import {revalidatePath, revalidateTag} from "next/cache";
-import {Skill} from "@/payload-types";
+import {revalidateTag} from "next/cache";
 
 
 export const revalidateSkills: CollectionAfterChangeHook = ({

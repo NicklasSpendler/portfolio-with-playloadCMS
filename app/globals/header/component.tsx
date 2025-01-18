@@ -2,8 +2,8 @@
 import React, {useEffect} from 'react';
 import './style.css'
 import Link from "next/link";
-import {useParams, usePathname} from "next/navigation";
-import {replaceSlashes, replaceSpaces} from "@/lib/utils";
+import {usePathname} from "next/navigation";
+import {replaceSlashes} from "@/lib/utils";
 
 function HeaderComponent(props: any) {
     useEffect(() =>{
@@ -21,7 +21,8 @@ function HeaderComponent(props: any) {
 
     const selectedElem = React.useRef<HTMLElement | null>(null)
     const AnimatedLineRef = React.useRef<HTMLDivElement>(null);
-    const MenuListRef = React.useRef<HTMLUListElement>(null);
+    // I use any because HTMLListElement does ont have .dataset ... I can't be bothered anymore
+    const MenuListRef = React.useRef<any>(null);
     
     function init()
     {

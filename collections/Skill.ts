@@ -1,4 +1,4 @@
-import {CollectionAfterChangeHook, CollectionConfig} from "payload";
+import {CollectionConfig} from "payload";
 import {revalidateSkills} from "@/hooks/revalidatePage";
 
 export const Skill: CollectionConfig = {

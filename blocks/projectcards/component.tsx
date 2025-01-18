@@ -1,7 +1,5 @@
 import React from 'react';
 import Projectcard from "@/components/ui/projectcard";
-import {getPayload} from "payload";
-import config from '@payload-config'
 import {getProjects} from "@/lib/queries";
 
 
