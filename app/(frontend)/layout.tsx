@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import HeaderComponent from "@/globals/header/component";
 import {getPayload} from "payload";
 import config from '@payload-config'
+import HeaderComponent from "@/app/globals/header/component";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,6 +24,7 @@ const payload = await getPayload({config});
 const header = await payload.findGlobal({
     slug: 'header'
 })
+
 
 
 export default function RootLayout({

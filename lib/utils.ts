@@ -9,6 +9,10 @@ export function replaceSpaces(str: string) {
   return str.replaceAll(' ', '_')
 }
 
+export function replaceSlashes(str: string) {
+  return str.replace('/', '');
+}
+
 export function replaceLines(str: string) {
-  return str.replaceAll('_', ' ')
+  return str.replaceAll('_', '')
 }

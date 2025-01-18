@@ -1,5 +1,5 @@
 import {CollectionAfterChangeHook, CollectionConfig} from "payload";
-import {revalidatePage} from "@/hooks/revalidatePage";
+import {revalidateSkills} from "@/hooks/revalidatePage";
 
 export const Skill: CollectionConfig = {
     slug: 'skill',
@@ -21,6 +21,6 @@ export const Skill: CollectionConfig = {
         }
     ],
     hooks: {
-        afterChange: [revalidatePage]
+        afterChange: [revalidateSkills]
     }
 }

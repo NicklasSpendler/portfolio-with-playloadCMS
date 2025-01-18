@@ -1,18 +1,20 @@
 import React from 'react';
 import Skilltag from "@/components/ui/skilltag";
-import {getPayload} from "payload";
-import config from '@payload-config'
 import {Skill} from "@/payload-types";
+import {getSkills} from "@/lib/queries";
 
 
 
 async function Page() {
-
-    const payload = await getPayload({config});
-
-    const skills = await payload.find({
+    
+    
+    
+/*    const skills = await payload.find({
         collection: 'skill',
-    })
+    })*/
+    
+    const skills = await getSkills();
+    
     const data: Skill[] =  skills.docs;
 
     return (

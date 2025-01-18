@@ -13,5 +13,13 @@
     content: " ";
     border-top: 1px solid white;
     position: absolute;
+
+}
+
+.animated{
     transition: all 1s;
+}
+
+.invisible{
+    visibility: hidden;
 }

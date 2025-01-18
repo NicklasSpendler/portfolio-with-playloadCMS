@@ -7,10 +7,10 @@ import sharp from 'sharp'
 
 import { Users } from './collections/Users'
 import { Media } from './collections/Media'
-import {Header} from "@/globals/header/config";
 import {Project} from "@/collections/Project";
 import {Skill} from "@/collections/Skill";
 import {postgresAdapter} from "@payloadcms/db-postgres";
+import {Header} from "@/app/globals/header/config";
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)

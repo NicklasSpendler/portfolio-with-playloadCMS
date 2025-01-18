@@ -3,6 +3,7 @@ import {getPayload} from "payload";
 import config from "@payload-config"
 import {Separator} from "@/components/ui/separator";
 import Projectcard from "@/components/ui/projectcard";
+import {unstable_cache} from "next/cache";
 
 
 const queryDataBySlug = cache(async ({ slug }: { slug: string }) => {
@@ -11,27 +12,45 @@ const queryDataBySlug = cache(async ({ slug }: { slug: string }) => {
 
     const payload = await getPayload({ config })
 
-    const skillQuery = await payload.find({
-        collection: 'skill',
-        limit: 1,
-        where: {
-            title: {
-                equals: parsedSlug,
+    // Query for skill
+    const skillQuery = unstable_cache(async ()=> {
+        return await payload.find({
+            collection: 'skill',
+            limit: 1,
+            where: {
+                title: {
+                    equals: parsedSlug,
+                },
             },
-        },
-    })
-    const skillData = skillQuery.docs[0]
+        })
+    },
+        [],
+        {
+            tags: ['skills']
+        })
     
-    const projectsQuery = await payload.find({
-        collection: 'project',
-        limit: 4,
-        where: {
-            relatedskills: {
-                equals:  skillData.id
+    const cached_skillQuery = await skillQuery();
+    const skillData = cached_skillQuery.docs[0]
+    
+    // query for projects related to skill
+    const projectsQuery = unstable_cache(async ()=> {
+        return await payload.find({
+            collection: 'project',
+            limit: 4,
+            where: {
+                relatedSkills: {
+                    equals:  skillData.id
+                }
             }
-        }
-    })
-    const projectsData = projectsQuery.docs
+        })
+    },
+        [],
+        {
+            tags: ['projects']
+        })
+
+    const cached_projectsQuery = await projectsQuery();
+    const projectsData = cached_projectsQuery.docs
 
     return {skillData, projectsData}
 })

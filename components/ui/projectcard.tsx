@@ -20,25 +20,20 @@ function Projectcard({data}: {data: Project}) {
                 <CardFooter className="p-0 flex-col flex-grow justify-between">
                     <div className="p-2 pt-0 flex gap-2 flex-wrap justify-center -row-end-1 ">
                         {
-                            data.relatedskills && data.relatedskills.length > 0 && (
+                            data.relatedSkills && data.relatedSkills.length > 0 && (
                                 <>
                                     {
-                                        data.relatedskills.slice(0,5).map((result: any, index: number)=> (
+                                        data.relatedSkills.slice(0,5).map((result: any, index: number)=> (
                                             <Skilltag name={result?.title} key={index}/>
                                         ))
                                     }
                                     {
-                                        data.relatedskills.length > 5 && (
-                                            <p className="flex justify-center items-center">+{data.relatedskills.length - 5} more</p>
+                                        data.relatedSkills.length > 5 && (
+                                            <p className="flex justify-center items-center">+{data.relatedSkills.length - 5} more</p>
                                         )
                                     }
                                 </>
                             )
-/*                            data.relatedskills?.slice(0,5).map((result: any, index: number)=> {
-                                return(
-                                    <Skilltag name={result?.title} key={index}/>
-                                )
-                            })*/
                         }
                     </div>
                     <div className="bg-pink-800 w-full text-center flex justify-center h-6">

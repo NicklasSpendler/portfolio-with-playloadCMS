@@ -1,6 +1,7 @@
 import {CollectionConfig} from "payload";
 import {Projectcards} from "@/blocks/projectcards/config";
 import {RichText} from "@/blocks/richText/config";
+import {revalidateProjects, revalidateSkills} from "@/hooks/revalidatePage";
 
 export const Project: CollectionConfig = {
     slug: 'project',
@@ -35,12 +36,14 @@ export const Project: CollectionConfig = {
             ]
         },
         {
-            name: 'relatedskills',
+            name: 'relatedSkills',
             label: 'related skills',
             type: "relationship",
             relationTo: 'skill',
             hasMany: true
         }
-    ]
-    
+    ],
+    hooks: {
+        afterChange: [revalidateProjects]
+    }
 }

@@ -140,7 +140,7 @@ export interface Project {
           }
       )[]
     | null;
-  relatedskills?: (number | Skill)[] | null;
+  relatedSkills?: (number | Skill)[] | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -279,7 +279,7 @@ export interface ProjectSelect<T extends boolean = true> {
               blockName?: T;
             };
       };
-  relatedskills?: T;
+  relatedSkills?: T;
   updatedAt?: T;
   createdAt?: T;
 }
