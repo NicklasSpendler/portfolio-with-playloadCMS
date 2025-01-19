@@ -34,7 +34,7 @@ function HeaderComponent(props: any) {
         if (currentPath == '/'){
             selectedElem.current = MenuListRef.current.children[0] as HTMLElement;
             MoveLineTo(selectedElem.current);
-        }else if (currentPath != '/'){
+        }else{
             selectedElem.current = MenuListRef.current.children[compareNavDirection(currentPath)] as HTMLElement;
             MoveLineTo(selectedElem.current);
         }
