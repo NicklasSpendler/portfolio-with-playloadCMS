@@ -56,6 +56,7 @@ function HeaderComponent(props: any) {
                 return(i);
             }
         }
+            return(0);
     }
     
     function MoveLineTo(index: HTMLElement): void {
@@ -89,7 +90,6 @@ function HeaderComponent(props: any) {
                     <ul ref={MenuListRef} className="nav flex gap-5">
                     {
                     props.header.nav.map((item: any, index: number) => {
-
                             return(
                                 <li key={index} data-dir={item.link}>
                                     <Link href={item.link} onMouseOver={(e) => MoveLineTo(e.target as HTMLElement)}

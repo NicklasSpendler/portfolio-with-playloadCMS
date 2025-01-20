@@ -6,13 +6,6 @@ import {getSkills} from "@/lib/queries";
 
 
 async function Page() {
-    
-    
-    
-/*    const skills = await payload.find({
-        collection: 'skill',
-    })*/
-    
     const skills = await getSkills();
     
     const data: Skill[] =  skills.docs;
