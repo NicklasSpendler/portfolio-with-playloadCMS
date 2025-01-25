@@ -1,52 +1,50 @@
-import React, {cache} from 'react';
+import React from 'react';
 import {getPayload, PaginatedDocs} from "payload";
 import config from "@payload-config";
 import {unstable_cache} from "next/cache";
-import {Project, Skill} from "@/payload-types";
+import {Skill} from "@/payload-types";
 import Skilltag from "@/components/ui/skilltag";
 import {Separator} from "@/components/ui/separator";
+import {RenderBlocks} from "@/blocks/RenderBlocks";
 
 
-const queryDataBySlug = cache(async ({ slug }: { slug: string }) => {
-    const parsedSlug = decodeURIComponent(slug)
 
-    const payload = await getPayload({ config })
+
+const projectQuery: ({slug}: { slug: string }) => Promise<PaginatedDocs<any>> = unstable_cache(async ({ slug }: { slug: string }) => {
+        const parsedSlug = decodeURIComponent(slug)
+
+        const payload = await getPayload({ config })
     
-    const projectQuery: () => Promise<PaginatedDocs<Project>> = unstable_cache(async () => {
-        return await payload.find({
-            collection: 'project',
-            limit: 1,
-            where: {
-                projectname: {
-                    equals: parsedSlug
-                }
+    return await payload.find({
+        collection: 'project',
+        limit: 1,
+        where: {
+            projectname: {
+                equals: parsedSlug
             }
-        })
-    },
-        [],
-        {
-            tags: ['projects']
-        })
-    
-    return projectQuery().then(res => res.docs[0]);
-})
+        }
+    })
+},
+    [],
+    {
+        tags: ['projects']
+    })
 
 async function Page({params}) {
-
     const {slug} = await params
 
-    const data = await queryDataBySlug({
+    const data = await projectQuery({
         slug,
-    })
-    
-    console.log(data)
+    }).then(res => res.docs[0]);
     
     return (
         <div className={"wrapper"}>
             <h1 className={"text-3xl font-bold capitalize"}>{data.projectname}</h1>
             <article className={"flex justify-between flex-col"}>
                 <section className={"project-content h-[80vh]"}>
-                    <p>Lorem ipsum</p>
+                    
+                    <RenderBlocks blocks={data.layout}/>
+                    
                 </section>
                 <section className={""}>
                     <p>Related skills</p>

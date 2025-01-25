@@ -138,6 +138,12 @@ export interface Project {
             blockName?: string | null;
             blockType: 'richText';
           }
+        | {
+            title: string;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'hero banner';
+          }
       )[]
     | null;
   relatedSkills?: (number | Skill)[] | null;
@@ -275,6 +281,13 @@ export interface ProjectSelect<T extends boolean = true> {
           | T
           | {
               content?: T;
+              id?: T;
+              blockName?: T;
+            };
+        'hero banner'?:
+          | T
+          | {
+              title?: T;
               id?: T;
               blockName?: T;
             };

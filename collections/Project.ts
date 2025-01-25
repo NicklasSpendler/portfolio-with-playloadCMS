@@ -2,6 +2,7 @@ import {CollectionConfig} from "payload";
 import {Projectcards} from "@/blocks/projectcards/config";
 import {RichText} from "@/blocks/richText/config";
 import {revalidateProjects} from "@/hooks/revalidatePage";
+import {heroBanner} from "@/blocks/heroBanner/config";
 
 export const Project: CollectionConfig = {
     slug: 'project',
@@ -33,6 +34,7 @@ export const Project: CollectionConfig = {
             blocks: [
                 Projectcards,
                 RichText,
+                heroBanner,
             ]
         },
         {
