@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+/*Done with github nightmare... Tailwind 4 does not support shadcn*/
+
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
