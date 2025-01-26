@@ -52,9 +52,7 @@ async function Page({params}) {
                     <div className={"related-skills flex gap-2 pt-1"}>
                     {
                         data.relatedSkills.map((skill: Skill, index) => (
-                            <>
-                                <Skilltag name={skill.title} key={index}/>
-                            </>
+                            <Skilltag name={skill.title} key={index}/>
                         ))
                     }
                     </div>

@@ -60,7 +60,6 @@ async function Page({params} : any) {
     const data = await queryDataBySlug({
         slug,
     })
-    
     return (
         <div className={"wrapper"}>
             <article>
