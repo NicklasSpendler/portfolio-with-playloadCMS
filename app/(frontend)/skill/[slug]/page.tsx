@@ -1,4 +1,4 @@
-import React, {cache} from 'react';
+import React from 'react';
 import {getPayload} from "payload";
 import config from "@payload-config"
 import {Separator} from "@/components/ui/separator";
@@ -6,13 +6,14 @@ import Projectcard from "@/components/ui/projectcard";
 import {unstable_cache} from "next/cache";
 
 
-const queryDataBySlug = cache(async ({ slug }: { slug: string }) => {
+const queryDataBySlug = unstable_cache(async ({ slug }: { slug: string }) => {
 
     const parsedSlug = decodeURIComponent(slug)
 
     const payload = await getPayload({ config })
 
     // Query for skill
+    //These extra unstable_cache can probably get removed
     const skillQuery = unstable_cache(async ()=> {
         return await payload.find({
             collection: 'skill',
@@ -53,7 +54,11 @@ const queryDataBySlug = cache(async ({ slug }: { slug: string }) => {
     const projectsData = cached_projectsQuery.docs
 
     return {skillData, projectsData}
-})
+},
+    [],
+    {
+        tags: ['skills', 'projects'],
+    })
 
 async function Page({params} : any) {
     const {slug} = await params
