@@ -89,6 +89,7 @@ export interface User {
 export interface Media {
   id: number;
   alt: string;
+  prefix?: string | null;
   updatedAt: string;
   createdAt: string;
   url?: string | null;
@@ -140,6 +141,7 @@ export interface Project {
           }
         | {
             title: string;
+            image: number | Media;
             id?: string | null;
             blockName?: string | null;
             blockType: 'hero banner';
@@ -247,6 +249,7 @@ export interface UsersSelect<T extends boolean = true> {
  */
 export interface MediaSelect<T extends boolean = true> {
   alt?: T;
+  prefix?: T;
   updatedAt?: T;
   createdAt?: T;
   url?: T;
@@ -288,6 +291,7 @@ export interface ProjectSelect<T extends boolean = true> {
           | T
           | {
               title?: T;
+              image?: T;
               id?: T;
               blockName?: T;
             };

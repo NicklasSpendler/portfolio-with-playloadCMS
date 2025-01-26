@@ -8,6 +8,13 @@ export const heroBanner: Block = {
             label: 'Title',
             type: 'text',
             required: true
+        },
+        {
+            name: 'image',
+            label: 'Image',
+            type: 'upload',
+            relationTo: 'media',
+            required: true,
         }
     ]
 }
