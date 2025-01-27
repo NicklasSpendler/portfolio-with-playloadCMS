@@ -1,9 +1,11 @@
 import React, {Fragment} from 'react';
 import {Project} from "@/payload-types";
 import headBannerCompnent from "@/blocks/heroBanner/component";
+import RichTextComponent from "@/blocks/richText/component";
 
 const blockComponents = {
-    "hero banner": headBannerCompnent
+    "hero banner": headBannerCompnent,
+    richText: RichTextComponent,
 }
 
 export const RenderBlocks: React.FC<{
@@ -11,8 +13,6 @@ export const RenderBlocks: React.FC<{
 }> = (props) => {
 
     const { blocks } = props
-
-    console.log("Blocks: ",blocks)
     
     if (!blocks) {
         return null
@@ -22,7 +22,6 @@ export const RenderBlocks: React.FC<{
         <Fragment>
             {blocks.map((block, index) => {
                 const { blockType } = block
-                console.log(blockType)
                 if (blockType && blockType in blockComponents) {
                     // @ts-ignore
                     const Block = blockComponents[blockType]

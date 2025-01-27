@@ -109,6 +109,7 @@ export interface Media {
 export interface Project {
   id: number;
   projectname: string;
+  showname?: boolean | null;
   shortdescription: string;
   github?: string | null;
   layout?:
@@ -141,6 +142,7 @@ export interface Project {
           }
         | {
             title: string;
+            image?: (number | null) | Media;
             id?: string | null;
             blockName?: string | null;
             blockType: 'hero banner';
@@ -267,6 +269,7 @@ export interface MediaSelect<T extends boolean = true> {
  */
 export interface ProjectSelect<T extends boolean = true> {
   projectname?: T;
+  showname?: T;
   shortdescription?: T;
   github?: T;
   layout?:
@@ -290,6 +293,7 @@ export interface ProjectSelect<T extends boolean = true> {
           | T
           | {
               title?: T;
+              image?: T;
               id?: T;
               blockName?: T;
             };

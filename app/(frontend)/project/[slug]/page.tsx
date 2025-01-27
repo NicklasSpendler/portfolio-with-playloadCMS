@@ -39,7 +39,11 @@ async function Page({params}) {
     
     return (
         <div className={"wrapper"}>
-            <h1 className={"text-3xl font-bold capitalize"}>{data.projectname}</h1>
+            {data.showname ? (
+                <h1 className={"text-3xl font-bold capitalize"}>{data.projectname}</h1>
+            ): (
+                <></>
+            )}
             <article className={"flex justify-between flex-col"}>
                 <section className={"project-content h-[80vh]"}>
                     

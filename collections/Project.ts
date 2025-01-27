@@ -11,10 +11,20 @@ export const Project: CollectionConfig = {
     },
     fields: [
         {
-            name: 'projectname',
-            label: 'Project Name',
-            type: 'text',
-            required: true,
+            type: 'row',
+            fields: [
+                {
+                    name: 'projectname',
+                    label: 'Project Name',
+                    type: 'text',
+                    required: true,
+                },
+                {
+                    name: 'showname',
+                    label: 'Show Project Name',
+                    type: 'checkbox',
+                },
+            ]
         },
         {
             name: 'shortdescription',
