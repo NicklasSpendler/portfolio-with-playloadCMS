@@ -8,7 +8,7 @@ import {Project} from "@/payload-types";
 function Projectcard({data}: {data: Project}) {
     return (
         <>
-            <Card className={`flex flex-col leading-4 overflow-hidden hover:scale-110 transition duration-500 transform max-w-[222px]`}>
+            <Card className={`flex flex-col leading-4 overflow-hidden hover:scale-110 transition duration-500 transform max-w-[222px] border`}>
                 <CardHeader>
                     <CardTitle className={"text-neonpink text-2xl text-center"}>{data.projectname}</CardTitle>
                     <Separator/>

@@ -1,9 +1,9 @@
 import React from 'react';
 import { RichText } from '@payloadcms/richtext-lexical/react'
 import { SerializedEditorState } from '@payloadcms/richtext-lexical/lexical'
+import './styling.css'
 
 function RichTextComponent({content}: {content: SerializedEditorState}) {
-    console.log('RichTextComponent ', content)
     return (
         <RichText data={content}/>
     );

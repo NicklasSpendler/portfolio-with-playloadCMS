@@ -45,7 +45,7 @@ async function Page({params}) {
                 <></>
             )}
             <article className={"flex justify-between flex-col"}>
-                <section className={"project-content h-[80vh]"}>
+                <section className={"project-content min-h-[80vh]"}>
                     
                     <RenderBlocks blocks={data.layout}/>
                     
