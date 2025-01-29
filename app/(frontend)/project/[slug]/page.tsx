@@ -45,17 +45,15 @@ async function Page({params}) {
                 <></>
             )}
             <article className={"flex justify-between flex-col"}>
-                <section className={"project-content min-h-[80vh]"}>
-                    
+                <section className={"project-content min-h-[80vh] project-text"}>
                     <RenderBlocks blocks={data.layout}/>
-                    
                 </section>
-                <section className={""}>
+                <section className={"pt-1.5"}>
                     <p>Related skills</p>
                     <Separator/>
                     <div className={"related-skills flex gap-2 pt-1"}>
                     {
-                        data.relatedSkills.map((skill: Skill, index) => (
+                        data.relatedSkills.map((skill: Skill, index: number) => (
                             <Skilltag name={skill.title} key={index}/>
                         ))
                     }

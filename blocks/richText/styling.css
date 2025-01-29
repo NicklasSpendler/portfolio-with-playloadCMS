@@ -1,21 +1,25 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-@layer utilities {
-    h1{
-        @apply text-4xl
-    }
-    h2{
-        @apply text-3xl
-    }
-    h3{
-        @apply text-2xl
-    }
-    h4{
-        @apply text-xl
-    }
-    h5{
-        @apply text-sm
-    }
+.payload-richtext h1 {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+}
+.payload-richtext h2 {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+}
+.payload-richtext h3 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+}
+.payload-richtext h4 {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+}
+.payload-richtext h5 {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+}
+.payload-richtext ul{
+    list-style-type: disc;
+    padding: revert;
+    margin: revert;
 }

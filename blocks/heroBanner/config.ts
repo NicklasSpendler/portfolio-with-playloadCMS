@@ -10,6 +10,11 @@ export const heroBanner: Block = {
             required: true
         },
         {
+          name: 'subtitle',
+          label: 'Sub Title',
+          type: 'text',  
+        },
+        {
             name: 'image',
             label: 'Image',
             type: 'upload',

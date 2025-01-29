@@ -142,6 +142,7 @@ export interface Project {
           }
         | {
             title: string;
+            subtitle?: string | null;
             image?: (number | null) | Media;
             id?: string | null;
             blockName?: string | null;
@@ -293,6 +294,7 @@ export interface ProjectSelect<T extends boolean = true> {
           | T
           | {
               title?: T;
+              subtitle?: T;
               image?: T;
               id?: T;
               blockName?: T;
