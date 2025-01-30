@@ -23,3 +23,13 @@ export const getProjects = unstable_cache(async () => {
     {
     tags: ['projects']
 })
+
+export const getAboutMe = unstable_cache(async () => {
+    return await payload.findGlobal({
+        slug: 'aboutMe'
+    })
+},[
+    
+],{
+    tags: ['aboutMe']
+})

@@ -11,6 +11,7 @@ import {Project} from "@/collections/Project";
 import {Skill} from "@/collections/Skill";
 import {postgresAdapter} from "@payloadcms/db-postgres";
 import {Header} from "@/app/globals/header/config";
+import {aboutMe} from "@/app/globals/about-me/config";
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -29,7 +30,8 @@ export default buildConfig({
       Skill
   ],
   globals: [
-      Header
+      Header,
+      aboutMe
   ],
   /*editor: lexicalEditor(),*/
   secret: process.env.PAYLOAD_SECRET || '',

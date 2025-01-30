@@ -5,7 +5,9 @@ import './styling.css'
 
 function RichTextComponent({content}: {content: SerializedEditorState}) {
     return (
-        <RichText data={content}/>
+        <div className={"px-4"}>
+            <RichText data={content}/>
+        </div>
     );
 }
 
