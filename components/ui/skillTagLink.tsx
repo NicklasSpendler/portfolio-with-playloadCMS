@@ -7,7 +7,7 @@ type props = {
 }
 // every skill should have a unique color
 
-function Skilltag(props: props) {
+function SkillTagLink(props: props) {
     return (
         <>
             <Link href={{
@@ -21,4 +21,4 @@ function Skilltag(props: props) {
     );
 }
 
-export default Skilltag;
+export default SkillTagLink;

@@ -3,7 +3,7 @@ import {getPayload, PaginatedDocs} from "payload";
 import config from "@payload-config";
 import {unstable_cache} from "next/cache";
 import {Skill} from "@/payload-types";
-import Skilltag from "@/components/ui/skilltag";
+import SkillTagLink from "@/components/ui/skillTagLink";
 import {Separator} from "@/components/ui/separator";
 import {RenderBlocks} from "@/blocks/RenderBlocks";
 
@@ -54,7 +54,7 @@ async function Page({params}) {
                     <div className={"related-skills flex gap-2 pt-1"}>
                     {
                         data.relatedSkills.map((skill: Skill, index: number) => (
-                            <Skilltag name={skill.title} key={index}/>
+                            <SkillTagLink name={skill.title} key={index}/>
                         ))
                     }
                     </div>

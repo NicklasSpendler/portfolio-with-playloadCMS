@@ -1,7 +1,7 @@
 import React from 'react';
 import {Card, CardContent, CardFooter, CardHeader, CardTitle} from "@/components/ui/card";
 import {Separator} from "@/components/ui/separator";
-import Skilltag from "@/components/ui/skilltag";
+import SkillTagLink from "@/components/ui/skillTagLink";
 import Link from "next/link";
 import {Project} from "@/payload-types";
 
@@ -24,7 +24,7 @@ function Projectcard({data}: {data: Project}) {
                                 <>
                                     {
                                         data.relatedSkills.slice(0,5).map((result: any, index: number)=> (
-                                            <Skilltag name={result?.title} key={index}/>
+                                            <SkillTagLink name={result?.title} key={index}/>
                                         ))
                                     }
                                     {
