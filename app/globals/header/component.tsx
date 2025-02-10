@@ -8,7 +8,7 @@ import {replaceSlashes} from "@/lib/utils";
 function HeaderComponent(props: any) {
     useEffect(() =>{
         init();
-    },[]);
+    },[init]);
     
     const currentPath = usePathname();
     

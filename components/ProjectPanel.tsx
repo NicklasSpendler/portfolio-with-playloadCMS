@@ -7,14 +7,14 @@ import Projectcard from "@/components/ui/projectcard";
 
 function ProjectPanel(props) {
     
-    let skills: Skill[] = props.skills;
-    let projects: Project[] = props.projects;
+    const skills: Skill[] = props.skills;
+    const projects: Project[] = props.projects;
     
     const [shownProjects, setShownProjects] = React.useState<Project[]>(projects);
     //let shownProjects: Project[] = projects;
 
     function filterProjects(name: string) {
-        const filteredList = projects.filter(project => project.relatedSkills.some(skill => skill.title == name))
+        const filteredList = projects.filter(project => project.relatedSkills.some(skill => (skill as Skill).title == name))
         setShownProjects(filteredList);
     }
     

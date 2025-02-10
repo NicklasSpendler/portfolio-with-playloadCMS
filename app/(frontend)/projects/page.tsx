@@ -13,7 +13,7 @@ async function Page() {
     
     const projects = await getProjects();
     
-    let data: dataType =  {
+    const data: dataType =  {
         skills: skills.docs,
         projects: projects.docs,
     };
